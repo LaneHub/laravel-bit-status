@@ -1,0 +1,19 @@
+{
+    "name": "yuanling/laravel-bit-status",
+    "description": "laravel orm bit status trait",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "liyu",
+            "email": "liyu001989@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Yuanling\\LaravelBitStatus\\": "src"
+        }
+    },
+    "require": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
