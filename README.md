@@ -11,14 +11,47 @@ $ composer require yuanling/laravel-bit-status -vvv
 
 ## Usage
 
-TODO
+Migrate database
+```
+$table->unsignedTinyInteger('status'); // 1 byte -> maximum of 8  different values
+$table->unsigneInteger('status');      // 4 byte -> maximum of 32 different values
+$table->unsignedBigInteger('status');  // 8 byte -> maximum of 64 different values
+```
+
+Add trait
+```
+use Illuminate\Database\Eloquent\Model;
+use Yuanling\LaravelBitStatus\BitStatusTrait;
+
+class TestModel extends Model
+{
+    const STATUS_INFO_COMPLETED = 1;
+    const STATUS_AVATAR_COMPLETED = 2;
+    const STATUS_DESC_COMPLETED = 3;
+
+    use BitStatusTrait;
+}
+```
+
+
+```
+$test = new TestModel;
+
+$test->setBitStatus('status', TestModel::STATUS_AVATAR_COMPLETED);  // default set true
+$test->setBitStatus('status', TestModel::STATUS_AVATAR_COMPLETED, true); // same as above
+$test->getBitStatus('success', TestModel::STATUS_AVATAR_COMPLETED); // true
+
+
+$test->setBitStatus('status', TestModel::STATUS_AVATAR_COMPLETED, false); // set false
+$test->getBitStatus('status', TestModel::STATUS_AVATAR_COMPLETED); // false
+```
 
 ## Contributing
 
 You can contribute in one of three ways:
 
-1. File bug reports using the [issue tracker](https://github.com/yuanling/laravel-bit-status/issues).
-2. Answer questions or fix bugs on the [issue tracker](https://github.com/yuanling/laravel-bit-status/issues).
+1. File bug reports using the [issue tracker](https://github.com/LaneHub/laravel-bit-status/issues).
+2. Answer questions or fix bugs on the [issue tracker](https://github.com/LaneHub/laravel-bit-status/issues).
 3. Contribute new features or update the wiki.
 
 _The code contribution process is not very formal. You just need to make sure that you follow the PSR-0, PSR-1, and PSR-2 coding guidelines. Any new code contributions must be accompanied by unit tests where applicable._
