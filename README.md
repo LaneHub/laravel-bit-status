@@ -3,7 +3,7 @@
 <p align="center"> laravel orm bit status trait.</p>
 
 [![Build Status](https://travis-ci.com/LaneHub/laravel-bit-status.svg?branch=master)](https://travis-ci.com/LaneHub/laravel-bit-status)
-
+![StyleCI build status](https://github.styleci.io/repos/349354592/shield)
 
 ## Installing
 
