@@ -1,6 +1,8 @@
-<h1 align="center"> laravel-bit-status </h1>
+<h1 align="center"> Laravel Bit Status </h1>
 
 <p align="center"> laravel orm bit status trait.</p>
+
+[![Build Status](https://travis-ci.com/LaneHub/laravel-bit-status.svg?branch=master)](https://travis-ci.com/LaneHub/laravel-bit-status)
 
 
 ## Installing
@@ -25,9 +27,10 @@ use Yuanling\LaravelBitStatus\BitStatusTrait;
 
 class TestModel extends Model
 {
-    const STATUS_INFO_COMPLETED = 1;
-    const STATUS_AVATAR_COMPLETED = 2;
-    const STATUS_DESC_COMPLETED = 3;
+    const STATUS_INFO_COMPLETED = 1;   // 0001
+    const STATUS_AVATAR_COMPLETED = 2; // 0010
+    const STATUS_DESC_COMPLETED = 3;   // 0100
+    const STATUS_FOO_COMPLETED = 4;    // 1000
 
     use BitStatusTrait;
 }
