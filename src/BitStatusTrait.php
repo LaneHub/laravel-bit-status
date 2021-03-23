@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the yuanling/laravel-bit-status.
+ * This file is part of the lanehub/laravel-bit-status.
  *
  * (c) liyu <liyu001989@gmail.com>
  *
