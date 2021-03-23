@@ -13,7 +13,7 @@
             "Yuanling\\LaravelBitStatus\\": "src"
         }
     },
-    "require": {
-        "phpunit/phpunit": "^9.5"
+    "require-dev": {
+        "phpunit/phpunit": "~8"
     }
 }
