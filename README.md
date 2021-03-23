@@ -23,7 +23,7 @@ $table->unsignedBigInteger('status');  // 8 byte -> maximum of 64 different valu
 Add trait
 ```
 use Illuminate\Database\Eloquent\Model;
-use Yuanling\LaravelBitStatus\BitStatusTrait;
+use Lanehub\LaravelBitStatus\BitStatusTrait;
 
 class TestModel extends Model
 {
