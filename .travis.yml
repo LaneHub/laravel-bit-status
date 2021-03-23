@@ -10,9 +10,9 @@ sudo: false  # 是否使用 sudo 模式
 matrix:
   include:
     - php: 7.2
-      dist: trusty
+      dist: bionic
     - php: 7.3
-      dist: trusty
+      dist: bionic
 
 # 执行前需要运行的命令
 install: travis_retry composer install --no-interaction --prefer-source
