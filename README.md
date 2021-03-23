@@ -8,7 +8,7 @@
 ## Installing
 
 ```shell
-$ composer require yuanling/laravel-bit-status -vvv
+$ composer require lanehub/laravel-bit-status -vvv
 ```
 
 ## Usage
