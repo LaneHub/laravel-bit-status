@@ -10,7 +10,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Yuanling\\LaravelBitStatus\\": "src"
+            "Lanehub\\LaravelBitStatus\\": "src"
         }
     },
     "require-dev": {

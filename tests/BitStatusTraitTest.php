@@ -1,8 +1,16 @@
 <?php
 
+/*
+ * This file is part of the lanehub/laravel-bit-status.
+ *
+ * (c) liyu <liyu001989@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled.
+ */
+
+use Lanehub\LaravelBitStatus\BitStatusTrait;
+use Lanehub\LaravelBitStatus\Exceptions\InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
-use Yuanling\LaravelBitStatus\BitStatusTrait;
-use Yuanling\LaravelBitStatus\Exceptions\InvalidArgumentException;
 
 class BitStatusTraitTest extends TestCase
 {
@@ -10,23 +18,23 @@ class BitStatusTraitTest extends TestCase
     {
         $obj = $this->getObjectForTrait(BitStatusTrait::class);
         $obj->status = 0;
-        $this->assertEquals($obj->getBitStatus('status', 1), false);
+        $this->assertSame($obj->getBitStatus('status', 1), false);
 
         $obj->status = 1;
-        $this->assertEquals($obj->getBitStatus('status', 1), true);
-        $this->assertEquals($obj->getBitStatus('status', 2), false);
+        $this->assertSame($obj->getBitStatus('status', 1), true);
+        $this->assertSame($obj->getBitStatus('status', 2), false);
 
         $obj->status = 4;
-        $this->assertEquals($obj->getBitStatus('status', 1), false);
-        $this->assertEquals($obj->getBitStatus('status', 2), false);
-        $this->assertEquals($obj->getBitStatus('status', 3), true);
-        $this->assertEquals($obj->getBitStatus('status', 4), false);
+        $this->assertSame($obj->getBitStatus('status', 1), false);
+        $this->assertSame($obj->getBitStatus('status', 2), false);
+        $this->assertSame($obj->getBitStatus('status', 3), true);
+        $this->assertSame($obj->getBitStatus('status', 4), false);
 
         $obj->status = 9;
-        $this->assertEquals($obj->getBitStatus('status', 1), true);
-        $this->assertEquals($obj->getBitStatus('status', 2), false);
-        $this->assertEquals($obj->getBitStatus('status', 3), false);
-        $this->assertEquals($obj->getBitStatus('status', 4), true);
+        $this->assertSame($obj->getBitStatus('status', 1), true);
+        $this->assertSame($obj->getBitStatus('status', 2), false);
+        $this->assertSame($obj->getBitStatus('status', 3), false);
+        $this->assertSame($obj->getBitStatus('status', 4), true);
     }
 
     public function testGetBitStatusWithInvalidArgument()
@@ -44,27 +52,27 @@ class BitStatusTraitTest extends TestCase
 
         $obj->status = 0;
         $obj->setBitStatus('status', 1);
-        $this->assertEquals($obj->status, 1);
+        $this->assertSame($obj->status, 1);
 
         $obj->status = 0;
         $obj->setBitStatus('status', 1, true);
-        $this->assertEquals($obj->status, 1);
+        $this->assertSame($obj->status, 1);
 
         $obj->status = 0;
         $obj->setBitStatus('status', 1);
         $obj->setBitStatus('status', 2);
-        $this->assertEquals($obj->status, 3);
+        $this->assertSame($obj->status, 3);
 
         $obj->status = 0;
         $obj->setBitStatus('status', 1, true);
         $obj->setBitStatus('status', 2, false);
         $obj->setBitStatus('status', 3, false);
         $obj->setBitStatus('status', 4, true);
-        $this->assertEquals($obj->status, 9);
+        $this->assertSame($obj->status, 9);
 
         $obj->status = 15; // 1111
         $obj->setBitStatus('status', 3, false);
-        $this->assertEquals($obj->status, 11);
+        $this->assertSame($obj->status, 11);
     }
 
     public function testSetBitStatusWithInvalidArgument()

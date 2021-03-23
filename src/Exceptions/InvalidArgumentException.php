@@ -8,7 +8,7 @@
  * This source file is subject to the MIT license that is bundled.
  */
 
-namespace Yuanling\LaravelBitStatus\Exceptions;
+namespace Lanehub\LaravelBitStatus\Exceptions;
 
 class InvalidArgumentException extends \InvalidArgumentException
 {

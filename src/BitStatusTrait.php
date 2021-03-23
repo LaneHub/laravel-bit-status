@@ -8,9 +8,9 @@
  * This source file is subject to the MIT license that is bundled.
  */
 
-namespace Yuanling\LaravelBitStatus;
+namespace Lanehub\LaravelBitStatus;
 
-use Yuanling\LaravelBitStatus\Exceptions\InvalidArgumentException;
+use Lanehub\LaravelBitStatus\Exceptions\InvalidArgumentException;
 
 /**
  * Laravel Eloquent Model Trait.
